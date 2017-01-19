@@ -1,0 +1,12 @@
+<h1 class="text-center">Madness</h1>
+
+<input type="text" ng-model="search">
+<label><input name="edible" ng-model="eat" value="false" type="radio"> Poisonous</label>
+<label><input name="edible" ng-model="eat" value="true" type="radio"> Non-Poisonous</label>
+<div ng-repeat="item in shrooms | filter:search | filter:eat">
+<ul ng-repeat="(key, value) in item">
+  <li>Name: {{ key }}</li>
+  <li>Description: {{ value.description }}</li>
+  <li>Edible: {{ value.edible }}</li>
+</ul>
+</div>
